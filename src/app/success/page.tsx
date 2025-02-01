@@ -1,18 +1,10 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 
 export default function Success() {
   const audioRef = useRef(null)
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.3 // Angenehme Lautstärke
-      audioRef.current.play().catch(() => {
-        console.log("Autoplay prevented. User must interact first.")
-      })
-    }
-  }, [])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-black relative">
